@@ -1,0 +1,28 @@
+a:link{
+    color: #ff0000;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    margin: 20px;
+}
+
+span {
+    color: blue;
+}
+
+
+div.footer {
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    bottom: 0;
+}
+
+html {
+    background-color: #fdfdbb
+}

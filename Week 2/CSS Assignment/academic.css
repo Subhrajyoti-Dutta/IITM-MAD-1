@@ -1,0 +1,45 @@
+a:link{
+    color: #ff0000;
+    text-decoration: none;
+}
+
+div {
+    margin: 20px;
+}
+
+div.footer {
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    bottom: 0;
+}
+
+table, th, td {
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    background-color : #259e3f;
+}
+
+th.sub{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+th.marks{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+td {
+    background-color : black;
+    color : white;
+    text-align : right;
+}
+
+html {
+    background-color: #fdfdbb
+}
