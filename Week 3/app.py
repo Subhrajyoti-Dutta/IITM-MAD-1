@@ -92,20 +92,15 @@ req = sys.argv[1]
 req_id = sys.argv[2]
 with open('data.csv', 'r') as fl:
     data = [i[:-1].split(', ') for i in fl]
-    # print(data)
     res = list()
     if req == '-s':
-        # res.append(data[0])
         res.extend([ i for i in data if req_id == i[0] ])
         if res:
             html = s(res)
         else:
             html = wrong()
     elif req == '-c':
-        # res.append(data[0])
         res.extend([ int(i[2]) for i in data if req_id == i[1] ])
-        # print(res)
-        # fig = plt.figure()
         plt.bar(*count(res),width=5)
         plt.ylabel("Frequency")
         plt.xlabel("Marks")
@@ -120,4 +115,3 @@ with open('data.csv', 'r') as fl:
         html = wrong()
     with open('index.html', 'w') as webpage:
         webpage.write(html)
-    # print(res)
