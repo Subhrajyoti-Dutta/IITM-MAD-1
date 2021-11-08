@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title> Student Data </title>
+        </head>
+    <body>
+        <h1> Student Details </h1>
+            <table border ="1px" >
+                <thead>
+                    <tr>
+                      <th> Student id </th>
+                      <th> Course id </th>
+                      <th> Marks </th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {% for data in s_list %}
+                    <tr>
+                        <td> {{ data[0] }} </td>
+                        <td> {{ data[1] }} </td>
+                        <td> {{ data[2] }} </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="2" style = "text-align:center"> Total Marks </td>
+                        <td> {{ s_total }} </td>   
+                 </tbody>
+            </table>
+            <p><a href="/">Go Back</a></p>
+    </body>
+</html>
