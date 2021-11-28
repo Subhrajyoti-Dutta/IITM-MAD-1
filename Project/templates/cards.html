@@ -11,15 +11,13 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 <div class="card card-flip h-100">
                     <div class="card-front text-white bg-dark">
                         <div class="card-body">
-                            <i class="fa fa-search fa-5x float-right"></i>
                             <h3 class="card-title">Front</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
-                        <button type="button" onclick="myFunction()" class="button btn btn-primary">Reveal</button>
                     </div>
                     <div class="card-back bg-white">
                         <div class="card-body">
@@ -32,14 +30,29 @@
             </div>
         </div>
     </div>
-    <script>
-        const cards = document.querySelectorAll(".card-flip");
-
-        function myFunction() {
-            this.classList.toggle("flip");
+    <!-- <script>
+        function myFunction(event) {
+            var element = event.currentTarget;
+            console.log(element.className);
+            if (element.className === "card card-flip h-100") {
+                if (element.style.transform == "rotateY(180deg)") {
+                    element.style.transform = "rotateY(0deg)";
+                } else {
+                    element.style.transform = "rotateY(180deg)";
+                }
+            }
+            // var result = document.getElementsByClassName("card-front text-white bg-dark")
+            // console.log('hello');
+            // console.log(result.className);
+            // console.log('hello');
+            // result.style.transform = "rotateY(180deg)"
+            // var result2 = document.getElementsByClassName("card-back")
+            // console.log('hello');
+            // console.log(result2.className);
+            // console.log('hello');
+            // result2.style.transform = "rotateY(0deg)"
         }
-        cards.forEach((card) => card.addEventListener("click", flipCard));
-    </script>
+    </script> -->
 </body>
 
 </html>
