@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="cards.css" rel="stylesheet" id="login-css">
+    <!-- <link href="{{url_for('static',filename='deck.css')}}" rel="stylesheet" id="login-css"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-dark">
+                        <div class="card-body">
+                            <i class="fa fa-search fa-5x float-right"></i>
+                            <h3 class="card-title">Front</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        <button type="button" onclick="myFunction()" class="button btn btn-primary">Reveal</button>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                            <h3 class="card-title">Back</h3>
+                            <p class="card-text">Suprise this one has more more more more content on the back!</p>
+                            <a href="#" class="btn btn-outline-secondary">Action</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const cards = document.querySelectorAll(".card-flip");
+
+        function myFunction() {
+            this.classList.toggle("flip");
+        }
+        cards.forEach((card) => card.addEventListener("click", flipCard));
+    </script>
+</body>
+
+</html>
