@@ -2,57 +2,56 @@
 
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="cards.css" rel="stylesheet" id="login-css">
-    <!-- <link href="{{url_for('static',filename='deck.css')}}" rel="stylesheet" id="login-css"> -->
+    <!-- <link href="cards.css" rel="stylesheet" id="login-css"> -->
+    <link href="{{url_for('static',filename='cards.css')}}" rel="stylesheet" id="login-css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container upper">
+        <h1>Deck : {{deck_name}}</h1>
+    </div>
+    <div class="container middle">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-md-8">
                 <div class="card card-flip h-100">
                     <div class="card-front text-white bg-dark">
                         <div class="card-body">
-                            <h3 class="card-title">Front</h3>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h4 class="card-title">1</h4>
+                            <h5>aaaaaaaaaaaaaaaaaaaaaaaaaa</h5>
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="card-title">{{card_word}}</h1>
                         </div>
                     </div>
                     <div class="card-back bg-white">
                         <div class="card-body">
-                            <h3 class="card-title">Back</h3>
-                            <p class="card-text">Suprise this one has more more more more content on the back!</p>
-                            <a href="#" class="btn btn-outline-secondary">Action</a>
+                            <h4 class="card-title">1</h4>
+                            <br>
+                            <br>
+                            <br>
+                            <h1 class="card-title">{{card_word}}</h1>
+                            <h1 class="card-title">{{card_ans}}</h1>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <h2>Review :</h2><br><br>
+                <button type="button" class="button btn btn-primary button-review">EASY</button>
+                <button type="button" class="button btn btn-primary button-edit">MEDIUM</button>
+                <button type="button" class="button btn btn-primary button-delete">DIFFICULT</button>
+
+            </div>
         </div>
     </div>
-    <!-- <script>
-        function myFunction(event) {
-            var element = event.currentTarget;
-            console.log(element.className);
-            if (element.className === "card card-flip h-100") {
-                if (element.style.transform == "rotateY(180deg)") {
-                    element.style.transform = "rotateY(0deg)";
-                } else {
-                    element.style.transform = "rotateY(180deg)";
-                }
-            }
-            // var result = document.getElementsByClassName("card-front text-white bg-dark")
-            // console.log('hello');
-            // console.log(result.className);
-            // console.log('hello');
-            // result.style.transform = "rotateY(180deg)"
-            // var result2 = document.getElementsByClassName("card-back")
-            // console.log('hello');
-            // console.log(result2.className);
-            // console.log('hello');
-            // result2.style.transform = "rotateY(0deg)"
-        }
-    </script> -->
+    <div class="container lower">
+        <div class="row">
+            <button type="button" class="button btn btn-primary button-review">NEXT</button>
+        </div>
+    </div>
 </body>
 
 </html>

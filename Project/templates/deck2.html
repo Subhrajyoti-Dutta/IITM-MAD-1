@@ -20,7 +20,7 @@
                         <div class="card-img-overlay d-flex flex-column">
                             <div class="card-body">
                                 <small class="card-meta mb-2">{{row * 3 + col + 1}}</small>
-                                <h4 class="card-title mt-0 "><a class="text-white" href="/deck/<user_id>/<deck_no>">{{deck_info.get(row * 3 + col + 1)}}</a></h4>
+                                <h4 class="card-title mt-0 "><a class="text-white" href="/deck/{{userName}}/{{row * 3 + col + 1}}/review">{{deck_info.get(row * 3 + col + 1)}}</a></h4>
                                 <small><i class="far fa-clock"></i> {{ user_record_info.get(row * 3 + col + 1, "new") }}</small><br>
                                 <button type="button" class="button btn btn-primary button-review">Review</button>
                                 <button type="button" class="button btn btn-primary button-edit">Edit</button>
