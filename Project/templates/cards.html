@@ -10,35 +10,27 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card card-flip h-100">
-                    <div class="card-front text-white bg-dark">
-                        <div class="card-body">
-                            <i class="fa fa-search fa-5x float-right"></i>
-                            <h3 class="card-title">Front</h3>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <button type="button" onclick="myFunction()" class="button btn btn-primary">Reveal</button>
-                    </div>
-                    <div class="card-back bg-white">
-                        <div class="card-body">
-                            <h3 class="card-title">Back</h3>
-                            <p class="card-text">Suprise this one has more more more more content on the back!</p>
-                            <a href="#" class="btn btn-outline-secondary">Action</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="card" onclick="flip(event)">
+        <div class="front">
+          <h1>This is the front</h1>
+          <p>Here is some additional text</p>
         </div>
+        <div class="back">
+          <h1>This is the back</h1>
+        </div>
+      </div>
     </div>
     <script>
-        const cards = document.querySelectorAll(".card-flip");
-
-        function myFunction() {
-            this.classList.toggle("flip");
+      function flip(event) {
+        var element = event.currentTarget;
+        if (element.className === "card") {
+          if (element.style.transform == "rotateY(180deg)") {
+            element.style.transform = "rotateY(0deg)";
+          } else {
+            element.style.transform = "rotateY(180deg)";
+          }
         }
-        cards.forEach((card) => card.addEventListener("click", flipCard));
+      }
     </script>
 </body>
 
