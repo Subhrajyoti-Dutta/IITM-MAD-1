@@ -187,3 +187,13 @@ h5 {
     color: #343a40;
     /* display: none */
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}

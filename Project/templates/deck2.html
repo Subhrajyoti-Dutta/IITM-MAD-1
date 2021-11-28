@@ -11,24 +11,24 @@
 <body>
     <section class="wrapper">
         <div class="container">
+            <h1>DECK</h1>
             {% for row in range(num//3+1) %}
             <div class="row" padding="20px">
                 {% for col in range(3) %} {%if (row*3 + col
                 < num)%} <div class="col-md-4">
-                    <div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+                    <div class="card text-white card-has-bg click-col" style="background-image:url({{ url_for('static',filename='bgimg.jpg') }});">
                         <!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
                         <div class="card-img-overlay d-flex flex-column">
                             <div class="card-body">
                                 <small class="card-meta mb-2">{{row * 3 + col + 1}}</small>
-                                <h4 class="card-title mt-0 "><a class="text-white" href="/deck/{{userName}}/{{row * 3 + col + 1}}/review">{{deck_info.get(row * 3 + col + 1)}}</a></h4>
+                                <h4 class="card-title mt-0 "><a class="text-white">{{deck_info.get(row * 3 + col + 1)}}</a></h4>
                                 <small><i class="far fa-clock"></i> {{ user_record_info.get(row * 3 + col + 1, "new") }}</small><br>
-                                <button type="button" class="button btn btn-primary button-review">Review</button>
-                                <button type="button" class="button btn btn-primary button-edit">Edit</button>
-                                <button type="button" class="button btn btn-primary button-delete">Delete</button>
+                                <button type="button" class="button btn btn-primary button-review"><a href="/deck/{{userName}}/{{row * 3 + col + 1}}/review">Review</a></button>
+                                <button type="button" class="button btn btn-primary button-edit"><a href="/deck/{{row * 3 + col + 1}}/edit">Edit</a></button>
+                                <button type="button" class="button btn btn-primary button-delete"><a href="/deck/{{row * 3 + col + 1}}/review">Delete</a></button>
                             </div>
                             <div class="card-footer">
                                 <div class="media">
-                                    <img class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" alt="Generic placeholder image" style="max-width:50px">
                                     <div class="media-body">
                                         <h6 class="my-0 text-white d-block">Oz COruhlu</h6>
                                         <small>Director of UI/UX</small>
@@ -37,6 +37,29 @@
                             </div>
                         </div>
                     </div>
+            </div>
+            {% else %}
+            <div class="col-md-4">
+                <div class="card text-white card-has-bg click-col" style="background-image:url({{ url_for('static',filename='bgimg.jpg') }});">
+                    <!-- <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?"> -->
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <small class="card-meta mb-2">{{row * 3 + col + 1}}</small>
+                            <h4 class="card-title mt-0 "><a class="text-white">Add Deck</a></h4>
+                            <!-- <small><i class="far fa-clock"></i> {{ user_record_info.get(row * 3 + col + 1, "new") }}</small><br> -->
+                            <button type="button" class="button btn btn-primary button-edit"><a href="/deck/{{userName}}/add">ADD</a></button>
+                        </div>
+                        <div class="card-footer">
+                            <div class="media">
+                                <img class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" alt="Generic placeholder image" style="max-width:50px">
+                                <div class="media-body">
+                                    <h6 class="my-0 text-white d-block">Oz COruhlu</h6>
+                                    <small>Director of UI/UX</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             {% endif %} {% endfor %}
         </div>

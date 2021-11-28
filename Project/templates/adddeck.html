@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <link href="adddeck.css" rel="stylesheet" id="login-css"> -->
+    <link href="{{url_for('static',filename='adddeck.css')}}" rel="stylesheet" id="login-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3>Add your Deck:</h3>
+            </div>
+            <div class="col-md-6 login-form-2">
+                <h3>Enter the following</h3>
+                <form method='post' action="/deck/{{user_id}}/add">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Deck Name *" name="deck-name" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Word *" name="first-word" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Corresponding Answer *" name="corresponding-answer" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Add" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

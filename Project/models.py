@@ -21,10 +21,16 @@ class Decks(db.Model):
 
 class Record(db.Model):
 	__tablename__ = 'record'
-	record_no = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	login_id = db.Column(db.String, db.ForeignKey('login.login_id'))
-	deck_no = db.Column(db.String, db.ForeignKey('deck.deck_no'))
+	login_id = db.Column(db.String, db.ForeignKey('login.login_id'), primary_key=True)
+	deck_no = db.Column(db.String, db.ForeignKey('deck.deck_no'), primary_key=True)
 	last_review = db.Column(db.Date)
+
+class UserData(db.Model):
+	__tablename__ = 'userdata'
+	user_id = db.Column(db.String, primary_key=True)
+	deck_no = db.Column(db.String, db.ForeignKey('deck.deck_no'), primary_key=True)
+	card_no = db.Column(db.Integer, primary_key=True)
+	diff = db.Column(db.Integer)
 
 def newFlashCards(deckName):
 	class FlashCardsMaker(db.Model):
