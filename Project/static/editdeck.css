@@ -89,22 +89,42 @@ body {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.button1{
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.button {
     display: none;
     margin: 0;
     position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translateX(85px);
+    width: 100
 }
 
-.review-button {
+.button-review {
+    top: 50%;
+}
+
+.button-edit {
+    top: 55%;
+}
+
+.button-delete {
+    top: 65%;
+}
+
+.card:hover .button {
+    display: block;
+}
+
+
+/* .review-button {
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+} */
 
 .card .card-img-overlay {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -115,4 +135,40 @@ body {
 .row {
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+.upper {
+    height: 10vh;
+}
+
+.middle {
+    height: 60vh;
+}
+
+.lower {
+    background-color: red;
+    height: 20vh;
+}
+
+#back-button {
+    margin-top: 10rem;
+    background-color: blue;
+}
+
+.button-review {
+    top: 50%;
 }

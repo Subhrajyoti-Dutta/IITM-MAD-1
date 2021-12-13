@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import datetime
+import sqlalchemy
 
 #create a Flask Instance
 app=Flask(__name__)
@@ -40,8 +41,5 @@ def newFlashCards(deckName):
 		card_ans = db.Column(db.String)
 	return FlashCardsMaker
 
-db.create_all()
 if __name__ == "__main__":
-	a = Record(login_id = 'root', deck_no = '1', last_review = datetime.date.today())
-	db.session.add(a)
-	db.session.commit()
+	db.create_all()

@@ -146,3 +146,13 @@ a:hover {
     text-decoration: none;
     color: white;
 }
+
+.welcome {
+    text-align: center;
+    font-size: 100px;
+}
+
+.user {
+    text-align: center;
+    font-size: 70px;
+}
